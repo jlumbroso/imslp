@@ -7,6 +7,8 @@ authors = ["Jérémie Lumbroso <lumbroso@cs.princeton.edu>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 mwclient = "^0.10.1"
+requests = "^2.24.0"
+bs4 = "^0.0.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
