@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "imslp"
 version = "0.1.0"
-description = ""
+description = "The clean and modern way of accessing IMSLP data and scores programmatically."
 authors = ["Jérémie Lumbroso <lumbroso@cs.princeton.edu>"]
 
 [tool.poetry.dependencies]
