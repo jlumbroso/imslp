@@ -1,6 +1,14 @@
 
 import mwclient
 
+
+__author__ = "Jérémie Lumbroso <lumbroso@cs.princeton.edu>"
+
+__all__ = [
+    "ImslpMwClient",
+]
+
+
 #
 IMSLP_HOST = "imslp.org"
 IMSLP_API_PATH = "/"

@@ -2,6 +2,15 @@
 import requests
 
 
+__author__ = "Jérémie Lumbroso <lumbroso@cs.princeton.edu>"
+
+__all__ = [
+    "list_people",
+    "list_works",
+    "load_cache",
+]
+
+
 # URL patterns for the IMSLP API
 # For more information, see: https://imslp.org/wiki/IMSLP:API
 

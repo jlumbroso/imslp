@@ -8,6 +8,14 @@ import mwclient.page
 import requests
 
 
+__author__ = "Jérémie Lumbroso <lumbroso@cs.princeton.edu>"
+
+__all__ = [
+    "fetch_category_table",
+    "fetch_images_metadata",
+]
+
+
 # Pattern of the URL base
 IMSLP_BASE_URL = "https://imslp.org{}"
 
