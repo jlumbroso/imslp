@@ -116,7 +116,6 @@ class ImslpClient:
                 results_by_composer
             ))
 
-        print(len(results_by_title), len(results_by_composer))
         if intersect:
             results = results_by_title.intersection(results_by_composer)
         else:

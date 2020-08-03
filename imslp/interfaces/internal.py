@@ -71,7 +71,7 @@ def _raw_call(imslp_url_pattern: str, start: int = 0, count: int = None):
 
     results = []
     more_results = True
-    start = 0
+
     while more_results:
         try:
             req = requests.get(imslp_url_pattern.format(start=start))
@@ -79,12 +79,13 @@ def _raw_call(imslp_url_pattern: str, start: int = 0, count: int = None):
                 continue
             obj = req.json()
         except:
-            continue
+            break
 
-        metadata = obj.get("metadata", dict())
-        more_results = metadata.get("moreresultsavailable", False)
+        more_results = False
 
         if "metadata" in obj:
+            metadata = obj.get("metadata", dict())
+            more_results = metadata.get("moreresultsavailable", False)
             del obj["metadata"]
 
         new_results = list(obj.values())
