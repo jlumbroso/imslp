@@ -3,6 +3,32 @@ name = "imslp"
 version = "0.1.0"
 description = "The clean and modern way of accessing IMSLP data and scores programmatically."
 authors = ["Jérémie Lumbroso <lumbroso@cs.princeton.edu>"]
+license = "LGPL-3.0-or-later"
+readme = "README.md"
+homepage = "https://github.com/jlumbroso/imslp"
+repository = "https://github.com/jlumbroso/imslp"
+include = [
+    "README.md",
+    "LICENSE",
+    "cache/imslp-people-cache-2020-08-02.zip",
+    "cache/imslp-works-cache-2020-08-02.zip",
+]
+keywords = [
+    "IMSLP",
+    "IMSLP-scraper",
+    "IMSLP-scraping",
+    "sheet-music",
+    "music-data",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Artistic Software",
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
