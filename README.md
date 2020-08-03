@@ -65,6 +65,11 @@ the website for data (people, score links) with HTML parsing.
 JavaScript, uses [IMSLP's custom API](https://imslp.org/wiki/IMSLP:API) to get the list of people and list of works
 programmatically through a web API query. 
 
+More recently, and in other languages:
+
+- [IMSLP Instrument Information Parsing Program](https://github.com/yoonlight/imslp): Last commit in July 2020
+(47 commits), uses scraping to extract instrumentation information. 
+
 ## Acknowledgements
 
 Let's be clear that all the heavy lifting is done by [`mwclient`](https://github.com/mwclient/mwclient)—and
