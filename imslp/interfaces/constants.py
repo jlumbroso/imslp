@@ -2,7 +2,8 @@
 __author__ = "Jérémie Lumbroso <lumbroso@cs.princeton.edu>"
 
 __all__ = [
-    "IMSLP_SUBCATEGORIES"
+    "IMSLP_SUBCATEGORIES",
+    "IMSLP_COOKIE_NAME_USERNAME",
 ]
 
 
@@ -21,3 +22,6 @@ IMSLP_SUBCATEGORIES = [
     "Books",
     "Pasticcios",
 ]
+
+# IMSLP cookie name where user is stored
+IMSLP_COOKIE_NAME_USERNAME = "imslp_wikiUserName"
