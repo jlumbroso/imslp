@@ -1,4 +1,5 @@
 
+import json
 import re
 import typing
 import urllib.parse
@@ -18,6 +19,9 @@ __all__ = [
 
 # Pattern of the URL base
 IMSLP_BASE_URL = "https://imslp.org{}"
+
+# Regular expression to extract the ratings
+IMSLP_REGEXP_RATINGS = re.compile(r"IMSLPRatings=({[^}]+})")
 
 # Regular expression to extract the page count
 IMSLP_REGEXP_PAGE_COUNT = re.compile(r"(\d+)\s*pp*\.*")
@@ -127,9 +131,26 @@ def fetch_images_metadata(page: mwclient.page.Page) -> list:
     if not r.ok:
         return list()
 
-    s = bs4.BeautifulSoup(r.content)
+    s = bs4.BeautifulSoup(r.content, features="html.parser")
 
     images = []
+
+    # obtain ratings dictionary from embedded JavaScript
+    # (the ratings are then loaded into the DOM onLoad)
+    ratings_dict = dict()
+    m = IMSLP_REGEXP_RATINGS.search(s.__str__())
+    if m is not None:
+        ratings_dict_str = m.group(1)
+        ratings_dict_old = json.loads(ratings_dict_str)
+
+        for key, value in ratings_dict_old.items():
+            try:
+                ratings_dict[int(key)] = {
+                    "rating": value[0],
+                    "count": int(value[1]),
+                }
+            except ValueError:
+                continue
 
     for f in page.images():
 
@@ -170,10 +191,12 @@ def fetch_images_metadata(page: mwclient.page.Page) -> list:
 
         images.append({
             "id": file_id,
-            "counter": file_counter,
+            "rating": ratings_dict.get(file_id, dict()).get("rating", -1),
+            "rating_count": ratings_dict.get(file_id, dict()).get("count", 0),
+            "download_count": file_counter,
             "title": f_title,
             "url": f.imageinfo["url"],
-            "pagecount": page_count,
+            "page_count": page_count,
             "size": f.imageinfo.get("size"),
             "sha1": f.imageinfo.get("sha1"),
             "obj": f,
