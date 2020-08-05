@@ -24,6 +24,9 @@ there exists a fantastic Python wrapper library called [`mwclient`](https://gith
 - **IMSLP API.** For convenience, the IMSLP built some *ad-hoc* scripts that can be used to get a
 list of people and a list of works, in a variety of different formats, including JSON.
 
+It also uses scraping to collect additional information (such as the number of pages in a score, the
+number of times a score was downloaded, or the user-provided ratings).
+
 ### Some quirks of IMSLP
 
 While fortunately, as mentioned, IMSLP uses a widely used open-source Wiki platform, MediaWiki, it has a
