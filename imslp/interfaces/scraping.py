@@ -29,6 +29,7 @@ IMSLP_REGEXP_PAGE_COUNT = re.compile(r"(\d+)\s*pp*\.*")
 # Pattern of URL to fetch category charts
 IMSLP_SCRAPE_CATCHART_URL = IMSLP_BASE_URL.format("/index.php?title={}&customcat=ccperson1")
 
+# class name and content string used to locate chart of works
 IMSLP_SCRAPE_CATCHART_TABLE_CLASS = "wikitable"
 IMSLP_SCRAPE_CATCHART_NEXT_CLASS = "next 200"
 IMSLP_SCRAPE_CATCHART_NEXT_TEXT = "next 200"
