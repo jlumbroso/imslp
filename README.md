@@ -1,5 +1,12 @@
 # imslp
 
+![pytest](https://github.com/jlumbroso/imslp/workflows/pytest/badge.svg)
+ [![codecov](https://codecov.io/gh/jlumbroso/imslp/branch/master/graph/badge.svg?token=GX52420WN4)](https://codecov.io/gh/jlumbroso/imslp)
+ [![Documentation Status](https://readthedocs.org/projects/imslp/badge/?version=latest)](https://imslp.readthedocs.io/en/latest/?badge=latest)
+ [![Downloads](https://pepy.tech/badge/imslp)](https://pepy.tech/project/imslp)
+ [![Run on Repl.it](https://repl.it/badge/github/jlumbroso/imslp)](https://repl.it/github/jlumbroso/imslp)
+ [![Stargazers](https://img.shields.io/github/stars/jlumbroso/imslp?style=social)](https://github.com/jlumbroso/imslp)
+
 🎼 The clean and modern way of accessing IMSLP data and scores programmatically. 🎶
 
 ## Installation
