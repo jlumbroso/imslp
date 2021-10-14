@@ -31,7 +31,7 @@ IMSLP_SCRAPE_CATCHART_URL = IMSLP_BASE_URL.format("/index.php?title={}&customcat
 
 # class name and content string used to locate chart of works
 IMSLP_SCRAPE_CATCHART_TABLE_CLASS = "wikitable"
-IMSLP_SCRAPE_CATCHART_NEXT_CLASS = "next 200"
+IMSLP_SCRAPE_CATCHART_NEXT_CLASS = "categorypaginglink"
 IMSLP_SCRAPE_CATCHART_NEXT_TEXT = "next 200"
 
 
@@ -108,7 +108,6 @@ def fetch_category_table(category_name: str, subcategory: typing.Optional[str] =
     rows_as_dicts = list(map(lambda parsed_row: dict(zip(header, parsed_row)), rows_parsed))
 
     return rows_as_dicts
-
 
 def fetch_images_metadata(page: mwclient.page.Page) -> list:
     """
