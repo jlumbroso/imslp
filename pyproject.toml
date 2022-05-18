@@ -1,54 +1,61 @@
 [tool.poetry]
-name = "imslp"
-version = "0.1.0"
-description = "The clean and modern way of accessing IMSLP data and scores programmatically."
 authors = ["Jérémie Lumbroso <lumbroso@cs.princeton.edu>"]
-license = "LGPL-3.0-or-later"
-readme = "README.md"
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Artistic Software",
+]
+description = "The clean and modern way of accessing IMSLP data and scores programmatically."
 homepage = "https://github.com/jlumbroso/imslp"
-repository = "https://github.com/jlumbroso/imslp"
 include = [
-    "README.md",
-    "LICENSE",
-    "cache/imslp-people-cache-2020-08-02.zip",
-    "cache/imslp-works-cache-2020-08-02.zip",
+  "README.md",
+  "LICENSE",
+  "cache/imslp-people-cache-2020-08-02.zip",
+  "cache/imslp-works-cache-2020-08-02.zip",
 ]
 keywords = [
-    "IMSLP",
-    "IMSLP-scraper",
-    "IMSLP-scraping",
-    "sheet-music",
-    "music-data",
+  "IMSLP",
+  "IMSLP-scraper",
+  "IMSLP-scraping",
+  "sheet-music",
+  "music-data",
 ]
-classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
-    "Topic :: Scientific/Engineering :: Information Analysis",
-    "Topic :: Software Development :: Libraries :: Python Modules",
-    "Topic :: Artistic Software",
-]
+license = "LGPL-3.0-or-later"
+name = "imslp"
+readme = "README.md"
+repository = "https://github.com/jlumbroso/imslp"
+version = "0.2.0"
 
 [tool.poetry.dependencies]
-python = "^3.8"
-mwclient = "^0.10.1"
-requests = "^2.24.0"
 bs4 = "^0.0.1"
+mwclient = "^0.10.1"
+python = "^3.8"
+requests = "^2.24.0"
 
 [tool.poetry.dev-dependencies]
+codecov = "^2.1.10"
 pytest = "^5.2"
+pytest-cov = "^2.10.1"
+pytest-mock = "^3.3.1"
+pytest-repeat = "^0.9.1"
+pytest-subtests = "^0.3.2"
 sphinx = "^3.3.0"
 sphinx-autodoc-typehints = "^1.11.1"
 sphinx-rtd-theme = "^0.5.0"
-pytest-cov = "^2.10.1"
-codecov = "^2.1.10"
-pytest-mock = "^3.3.1"
-pytest-subtests = "^0.3.2"
-pytest-repeat = "^0.9.1"
 tox = "^3.20.1"
 tox-poetry-dev-dependencies = "^0.0.5"
 
+# dependabot dependency pins (vulnerability warnings)
+babel = "^2.10.1"
+jinja2 = "^3.1.2"
+py = "^1.11.0"
+pygments = "^2.12.0"
+urllib3 = "^1.26.9"
+
 [build-system]
-requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
+requires = ["poetry>=0.12"]
