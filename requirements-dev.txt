@@ -4,7 +4,7 @@ attrs==21.4.0
 babel==2.10.1
 beautifulsoup4==4.11.1
 bs4==0.0.1
-certifi==2021.10.8
+certifi==2022.12.7
 charset-normalizer==2.0.12
 codecov==2.1.12
 colorama==0.4.4

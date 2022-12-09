@@ -1,6 +1,6 @@
 beautifulsoup4==4.11.1
 bs4==0.0.1
-certifi==2021.10.8
+certifi==2022.12.7
 charset-normalizer==2.0.12
 idna==3.3
 mwclient==0.10.1
