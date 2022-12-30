@@ -38,6 +38,7 @@ requests = "^2.24.0"
 
 [tool.poetry.dev-dependencies]
 codecov = "^2.1.10"
+pipdeptree = "^2.3.3"
 pytest = "^7.2.0"
 pytest-cov = "^2.10.1"
 pytest-mock = "^3.3.1"
@@ -46,13 +47,10 @@ pytest-subtests = "^0.3.2"
 sphinx = "^3.3.0"
 sphinx-autodoc-typehints = "^1.11.1"
 sphinx-rtd-theme = "^0.5.0"
-tox = "^3.20.1"
-tox-poetry-dev-dependencies = "^0.0.5"
 
 # dependabot dependency pins (vulnerability warnings)
 babel = "^2.10.1"
 jinja2 = "^3.1.2"
-py = "^1.11.0"
 pygments = "^2.12.0"
 urllib3 = "^1.26.9"
 
