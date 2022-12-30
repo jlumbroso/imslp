@@ -38,7 +38,7 @@ requests = "^2.24.0"
 
 [tool.poetry.dev-dependencies]
 codecov = "^2.1.10"
-pytest = "^5.2"
+pytest = "^7.2.0"
 pytest-cov = "^2.10.1"
 pytest-mock = "^3.3.1"
 pytest-repeat = "^0.9.1"
