@@ -1,4 +1,3 @@
-
 on: ["push", "pull_request"]
 
 # Running tests with pytest in Python 3.8
@@ -6,30 +5,32 @@ name: pytest
 jobs:
   pytest:
     name: pytest
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9"]
+        poetry-version: ["1.1.15"]
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@master
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Setup Python & Poetry and install project
-        uses: abatilo/actions-poetry@v1.5.0
+      - name: Install Python
+        uses: actions/setup-python@v4
         with:
-          python_version: 3.8.0
-          poetry_version: 1.0
-          working_directory: "."  # optional, defaults to ".'
-          args: install
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: ${{ matrix.poetry-version }}
+
+      - name: Install dependencies
+        run: poetry install
 
       - name: Run pytest
-        uses: abatilo/actions-poetry@v1.5.0
-        with:
-          python_version: 3.8.0
-          poetry_version: 1.0
-          working_directory: "."
-          args: run python -m pytest --cov=imslp --cov-branch tests/
+        run: poetry run python -m pytest --cov=imslp --cov-branch tests/
 
       - name: Run codecov to upload report to site
-        uses: abatilo/actions-poetry@v1.5.0
-        with:
-          python_version: 3.8.0
-          poetry_version: 1.0
-          working_directory: "."
-          args: run codecov -t ${{ secrets.CODECOV_TOKEN }}
+        run: poetry run codecov -t ${{ secrets.CODECOV_TOKEN }}
